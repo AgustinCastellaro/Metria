@@ -1,0 +1,501 @@
+@font-face{
+    font-family: "Gotham_light";
+    src: url("../font/Gotham-Light.otf") format("opentype");
+}
+
+@font-face{
+    font-family: "Gotham_bold";
+    src: url("../font/Gotham-Bold.otf") format("opentype");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Gotham_light";
+}
+
+body{
+    margin: 0;
+    height: 100%;
+}
+
+/* Nav */
+header{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 15px 0px;
+}
+
+.logo{
+    width: 100px;
+    z-index: 3;
+    padding: 0px 100px;
+}
+
+.logo img{
+    width: 100%;
+    cursor: pointer;
+}
+
+.icon-menu{
+    width: 40px;
+    height: 30px;
+    z-index: 3;
+    cursor: pointer;
+    margin: 0px 100px;
+}
+
+.icon-menu .spn1{
+    display: flex;
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 5px;
+    border-radius: 5px;
+    transition: all 200ms ease;
+    background: #2A91C4;
+}
+
+.icon-menu .spn2{
+    display: flex;
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 5px;
+    border-radius: 5px;
+    transition: all 200ms ease;
+
+    background: rgba(42,145,196,1);
+    background: -moz-linear-gradient(left, rgba(42,145,196,1) 0%, rgba(42,145,196,1) 50%, rgba(184,51,140,1) 51%, rgba(184,51,140,1) 71%, rgba(184,51,140,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(42,145,196,1)), color-stop(50%, rgba(42,145,196,1)), color-stop(51%, rgba(184,51,140,1)), color-stop(71%, rgba(184,51,140,1)), color-stop(100%, rgba(184,51,140,1)));
+    background: -webkit-linear-gradient(left, rgba(42,145,196,1) 0%, rgba(42,145,196,1) 50%, rgba(184,51,140,1) 51%, rgba(184,51,140,1) 71%, rgba(184,51,140,1) 100%);
+    background: -o-linear-gradient(left, rgba(42,145,196,1) 0%, rgba(42,145,196,1) 50%, rgba(184,51,140,1) 51%, rgba(184,51,140,1) 71%, rgba(184,51,140,1) 100%);
+    background: -ms-linear-gradient(left, rgba(42,145,196,1) 0%, rgba(42,145,196,1) 50%, rgba(184,51,140,1) 51%, rgba(184,51,140,1) 71%, rgba(184,51,140,1) 100%);
+    background: linear-gradient(to right, rgba(42,145,196,1) 0%, rgba(42,145,196,1) 50%, rgba(184,51,140,1) 51%, rgba(184,51,140,1) 71%, rgba(184,51,140,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a91c4', endColorstr='#b8338c', GradientType=1 );
+}
+
+.icon-menu .spn3{
+    display: flex;
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 5px;
+    border-radius: 5px;
+    transition: all 200ms ease;
+    background: #B8338C;
+}
+
+.spn2{
+    bottom: 32px;
+}
+
+.spn3{
+    bottom: 17px;
+}
+
+#check:checked ~ .icon-menu .spn1{
+    margin: 15px 0px 0px;
+    transform: rotate(45deg);
+    transition-property: transform, margin;
+    transition-delay: 0.1s, 0s;
+}
+
+#check:checked ~ .icon-menu .spn2{
+    display: none;
+}
+
+#check:checked ~ .icon-menu .spn3{
+    margin: 0px 0px 15px 0px;
+    transform: rotate(-45deg);
+    transition-property: transform, margin;
+    transition-delay: 0.1s, 0s;
+}
+
+#check{
+    display: none;
+}
+
+#check:checked ~ nav{
+    width: 100%;
+}
+
+
+/* Submenu */
+nav{
+    position: fixed;
+    z-index: 2;
+    top: 0px;
+    right: 0;
+    width: 0px;
+    height: 100vh;
+    background: rgb(26, 26, 26);
+    opacity: 0.75;
+    transition: all 400ms;
+    overflow: hidden;
+}
+
+ul.paginas{
+    position: absolute;
+    right: 60px;
+    width: 300px;
+    margin: 200px 0px 0px;
+}
+
+ul.paginas li{
+    margin: 50px 0px 0px 0px;
+    padding: 0px 0px 10px;
+    width: 0;
+    cursor: pointer;
+    list-style: none;
+    display: block;
+}
+
+ul.paginas li a{
+    font-family: "Gotham_bold";
+    white-space: nowrap;
+    border: none;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+ul.paginas li a:hover{
+    margin: 0px 0px 0px 15px;
+    color: rgb(197, 197, 197);
+    text-decoration: none;
+}
+
+ul.social{
+    position: absolute;
+    right: 60px;
+    width: 300px;
+    margin: 600px 0px 0px;
+}
+
+ul.social li{
+    margin: 10px 0px 0px 0px;
+    padding: 0px 0px 10px 0px;
+    width: 0;
+    cursor: pointer;
+    list-style: none;
+    display: block;
+}
+
+ul.social li a{
+    font-family: "Gotham_light";
+    white-space: nowrap;
+    border: none;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+ul.social li a:hover{
+    padding: 0px 0px 5px 0px;
+    color: rgb(197, 197, 197);
+    border-bottom: 1px solid rgb(197, 197, 197);
+    text-decoration: none;
+}
+
+
+/* Slider */
+.slider{
+    position: relative;
+    background: #aad5f6;
+}
+
+.slide-1{
+    background: url('../img/slider/Paladares_Caseros/paladares_caseros.png');
+}
+
+.slide-2{
+    background: url('../img/slider/Ferrari/ferrari.png');
+}
+
+.slide-3{
+    background: url('../img/slider/El_Señor_de_los_Anillos/imagen.png');
+}
+
+.slide{
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.caption-1{
+    width: 100%;
+    position: absolute;
+    top: 85%;
+    left: 3.5%;
+    padding: 40px 0px;
+    color: #000000;
+}
+
+.caption-2{
+    width: 100%;
+    position: absolute;
+    top: 85%;
+    left: 3.5%;
+    padding: 40px 0px;
+    color: #ffffff;
+}
+
+.arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 100;
+    background: rgba(0, 0, 0, .1);
+    border-radius: 50%;
+    transform: background 500ms;
+}
+
+.arrow img{
+    width: 50px;
+}
+
+.arrow:hover{
+    background: rgba(0, 0, 0, .4);
+}
+
+.anterior{
+    left: 60px;
+    z-index: 1;
+}
+
+.siguiente{
+    right: 60px;
+    z-index: 1;
+}
+
+
+/* Proyectos */
+.contenido_proyectos{
+    width: 100vw;
+    height: 600px;
+    margin: 15vh auto 0px;
+}
+
+.contenido_proyectos .menu{
+    display: flex;
+    margin: 0px auto 20px;
+    width: 90%;
+    height: auto;
+}
+
+.contenido_proyectos .menu h1{
+    font-family: "Gotham_bold";
+    font-size: 30px;
+    color: #2A91C4;
+    margin: 0px auto;
+}
+
+.contenido_proyectos hr{
+    display: flex;
+    margin: 0px auto 20px;
+    width: 90%;
+    border-top: 1px solid rgb(236, 236, 236);
+}
+
+.contenido_proyectos .contenido{
+    margin: 0px auto;
+    width: 90%;
+}
+
+.contenido_proyectos .contenido .fila{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px auto 50px;
+}
+
+.contenido_proyectos .contenido .proyecto{
+    width: 350px;
+    height: 200px;
+    background: #ffffff;
+}
+
+.contenido_proyectos .contenido .proyecto .imagen{
+    width: 350px;
+    height: 150px;
+}
+
+.contenido_proyectos .contenido .proyecto .imagen img{
+    display: flex;
+    margin: 0px auto;
+    width: 100%;
+    height: 100%;
+}
+
+.contenido_proyectos .contenido .proyecto .titulo{
+    width: 350px;
+    height: 50px;
+}
+
+.contenido_proyectos .contenido .proyecto .titulo p{
+    font-family: "Gotham_light";
+    font-size: 20px;
+    color: #000000;
+    padding: 12px 0px 0px;
+}
+
+
+/* Sobre Nosotros */
+.contenido_sobre_nosotros{
+    width: 100vw;
+    height: 600px;
+    margin: 15vh auto 0px;
+}
+
+.contenido_sobre_nosotros .menu{
+    display: flex;
+    margin: 0px auto 20px;
+    width: 90%;
+    height: auto;
+}
+
+.contenido_sobre_nosotros .menu h1{
+    font-family: "Gotham_bold";
+    font-size: 30px;
+    color: #2A91C4;
+    margin: 0px auto;
+}
+
+.contenido_sobre_nosotros hr{
+    display: flex;
+    margin: 0px auto 20px;
+    width: 90%;
+    border-top: 1px solid rgb(236, 236, 236);
+}
+
+.contenido_sobre_nosotros .contenido{
+    margin: 0px auto;
+    width: 90%;
+    height: 1500px;
+}
+
+.contenido_sobre_nosotros .contenido .info{
+    margin: 60px auto 0px;
+    width: 80%;
+    height: 1400px;
+}
+
+.contenido_sobre_nosotros .contenido .info .logoydatos{
+    margin: 60px auto 0px;
+    height: 380px;
+}
+
+.contenido_sobre_nosotros .contenido .info .logoydatos .imagen{
+    float: left;
+    margin: -10px 0px 0px;
+    width: 180px;
+    height: 260px;
+}
+
+.contenido_sobre_nosotros .contenido .info .logoydatos .imagen img{
+    display: flex;
+    margin: 0px auto;
+    width: 100%;
+    height: 100%;
+}
+
+.contenido_sobre_nosotros .contenido .info .logoydatos .texto{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    float: right;
+    width: 800px;
+    height: 220px;
+}
+
+.contenido_sobre_nosotros .contenido .info .logoydatos .texto p{
+    font-family: "Gotham_light";
+    font-size: 20px;
+    color: #000000;
+}
+
+.contenido_sobre_nosotros .contenido .info .logoydatos .texto p b{
+    font-family: "Gotham_bold";
+}
+
+.contenido_sobre_nosotros .contenido .info .identidad_visual .info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0px auto;
+    width: 600px;
+    height: 150px;
+}
+
+.contenido_sobre_nosotros .contenido .info .identidad_visual .info .titulo{
+    width: 600px;
+}
+
+.contenido_sobre_nosotros .contenido .info .identidad_visual .info .titulo h1{
+    font-family: "Gotham_bold";
+    font-size: 35px;
+    color: #000000;
+    text-align: center;
+}
+
+.contenido_sobre_nosotros .contenido .info .identidad_visual .info .datos{
+    width: 600px;
+}
+
+.contenido_sobre_nosotros .contenido .info .identidad_visual .info .datos p{
+    font-family: "Gotham_light";
+    font-size: 20px;
+    color: #000000;
+}
+
+.contenido_sobre_nosotros .contenido .info .identidad_visual .bloques{
+    display: flex;
+    justify-content: space-between;
+    margin: 100px auto 0px;
+    height: 180px;
+}
+
+.contenido_sobre_nosotros .contenido .info .identidad_visual .bloques .titulo{
+    width: 400px;
+}
+
+.contenido_sobre_nosotros .contenido .info .identidad_visual .bloques .titulo h1{
+    font-family: "Gotham_bold";
+    font-size: 30px;
+    color: #000000;
+}
+
+.contenido_sobre_nosotros .contenido .info .identidad_visual .bloques .datos{
+    height: 120px;
+}
+
+.contenido_sobre_nosotros .contenido .info .identidad_visual .bloques .datos p{
+    font-family: "Gotham_light";
+    font-size: 20px;
+    color: #000000;
+}
+
+.contenido_sobre_nosotros .contenido .info .identidad_visual .bloques .estrategia,
+.contenido_sobre_nosotros .contenido .info .identidad_visual .bloques .creatividad,
+.contenido_sobre_nosotros .contenido .info .identidad_visual .bloques .simetria{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 400px;
+    height: 100%;
+}
+
